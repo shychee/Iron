@@ -471,6 +471,7 @@ async fn handle_connection(mut stream: TcpStream) {
 
 **安全性考虑**
 > **防止目录遍历攻击**
+
 修改 `src/main.rs` 文件:
 
 ```rust
@@ -494,6 +495,7 @@ fn handle_request(request_line: &str) -> (&str, String) {
 ```
 
 > **实现简单的路由功能**
+
 让我们来实现一个简单的路由功能，这将使服务器更加灵活和易于扩展。我们将使用闭包来定义路由处理函数，这样可以轻松地添加新的路由。
 以下是实现路由功能的方法：
 
@@ -626,6 +628,7 @@ router.add_route("/api/users", |_| {
 ```
 
 > **支持不同的 HTTP 方法**
+
 首先来定义一个枚举来表示不同的 HTTP 方法：
 ```rust
 #[derive(Debug, PartialEq, Eq, Hash, Clone)]
@@ -702,6 +705,7 @@ fn parse_request(request: &str) -> Request {
 ```
 
 > **实现更复杂的路由**
+
 现在我们有了简单的路由能力，让我们更进一步的使我们的路由系统更加灵活。
 首先，我们需要添加一个新的依赖到`Cargo.toml`
 
@@ -791,6 +795,7 @@ fn parse_request(request: &str) -> Request {
 ```
 
 > **工程化**
+
 目前我们的程序已经初具规模，不能再继续拉屎了，我们需要将代码分散到不同的文件中是一个很好的做法，可以提高代码的可读性和可维护性。以下是一个建议的项目结构，适合开发成一个框架:
 
 ```
@@ -1057,6 +1062,7 @@ pub fn delete_user(request: Request) -> Response {
 这个结构将代码分成了几个主要模块：http、router、server 和 handlers。这样的组织方式使得代码更加模块化，更容易维护和扩展。
 
 > **添加单元测试和集成测试**
+
 我们来为这个 web 框架添加一些单元测试和集成测试。我们将分别为主要的模块添加测试。
 首先，在 `Cargo.toml` 文件中添加一些测试依赖：
 ```rust
@@ -1353,6 +1359,7 @@ async fn main() {
 ```
 
 > **路由分组**
+
 当然，在实际应用中，我们经常需要对不同的路由应用不同的中间件。所以我们需要实现一个路由分组的功能。
 首先，我们需要创建一个 RouterGroup 结构体，然后修改 Router 结构来支持分组。以下是实现步骤：
 
