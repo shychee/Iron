@@ -22,8 +22,8 @@ Rust 是一门系统级编程语言, 具有高性能、内存安全和并发性�
 首先, 创建一个新的 Rust 项目:
 
 ```bash
-cargo new my-webserver-rs
-cd my-webserver-rs
+cargo new Iron
+cd Iron
 ```
 然后在 `src/main.rs` 文件中编写代码:
 
