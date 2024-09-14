@@ -1,0 +1,16 @@
+[package]
+name = "Iron"
+version = "0.1.0"
+authors = ["shychee <shychee96@gmail.com>"]
+description = "A simple web server implementation in Rust for study"
+license = "MIT"
+repository = "https://github.com/shychee/Iron"
+rust-version = "1.79.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.28", features = ["full"] }
+log = "0.4"
+env_logger = "0.10"
+regex = "1.5"
+async-trait = "0.1"
